@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.app {
+    width: 500px;
+    margin: 80px auto;
+}
+
+.app h1 {
+    font-size: 30px;
+    border-bottom: 1px solid #333;
+    padding: 16px 0;
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    margin: 8px 0;
+}
+
+.form-control input,
+.form-control button {
+    height: 40px;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.form-control button {
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: 0;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.todos li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    background-color: #d9d9d9;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions i {
+    cursor: pointer;
+}
+
+.actions i:first-child {
+    color: red;
+}
+
+.actions i:last-child {
+    color: green;
+}
+
+.clear-todos {
+    background-color: orangered;
+    color: white;
+    border: none;
+    outline: 0;
+    height: 40px;
+    width: 500px;
+
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.todos li+.clear-todos {
+    display: flex;
+}
+
+.completed {
+    text-decoration: line-through;
+    text-decoration-color: green;
+    text-decoration-thickness: 3px;
+}
