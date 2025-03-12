@@ -16,9 +16,11 @@ li {
     list-style: none;
 }
 
-.app {
-    width: 500px;
+.app , .clear-todos {
+    max-width: 500px;
+    width: 100%;
     margin: 80px auto;
+    padding: 10px;
 }
 
 .app h1 {
@@ -64,6 +66,14 @@ li {
     padding: 0 16px;
 }
 
+.todos li span {
+    direction: rtl;
+    overflow: hidden;
+    text-overflow:ellipsis ;
+    white-space: nowrap;
+    max-width: 70%;
+}
+
 .actions {
     display: flex;
     gap: 8px;
@@ -87,19 +97,15 @@ li {
     border: none;
     outline: 0;
     height: 40px;
-    width: 500px;
-
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    margin: 2px 0 ;
 }
 
-.todos li+.clear-todos {
-    display: flex;
-}
+
 
 .completed {
+    color: #8b8989;
     text-decoration: line-through;
-    text-decoration-color: green;
-    text-decoration-thickness: 3px;
+    text-decoration-color: rgb(140, 148, 140);
+    text-decoration-thickness: 2px;
 }
