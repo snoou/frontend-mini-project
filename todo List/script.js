@@ -11,11 +11,11 @@ window.onload = function () {
     }
 
     li.innerHTML = `
-        <span class="${className}">${todo.text}</span>
         <div class="actions">
           <i class="fa fa-trash delete"></i>
           <i class="fa fa-check"></i>
         </div>
+        <span class="${className}">${todo.text}</span>
       `;
     ul.appendChild(li);
   });
