@@ -9,6 +9,7 @@ Click on a project to view the live demo:
 |---------|----------|
 | Todo List | [View](https://snoou.github.io/frontend-mini-project/todo%20List/) |
 | CV | [View](https://snoou.github.io/frontend-mini-project/CV-main/) |
+| min-tailwind | [View](https://snoou.github.io/frontend-mini-project/min-tailwind/) |
 
 
 
