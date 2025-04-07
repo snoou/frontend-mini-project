@@ -20,3 +20,88 @@
   --text-color: #1a2428; /* Dark text for readability */
   --bg-color: #fff; /* Clean, white background */
 }
+
+
+img {
+  width: 100%;
+}
+
+body{
+  color: var(--text-color);
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+  box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
+  padding: 20px 100px ;
+  transition: 0.5s ;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.profile span {
+  font-size: 13px ;
+  font-weight: 500;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem ;
+  font-weight: 600;
+  color: var(--text-color);
+  column-gap: 0.5rem;
+}
+
+.logo .bx {
+  font-size: 24px ;
+  color: var(--orange-color);
+}
+
+.navbar {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.navbar a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+}
+
+.navbar a:hover {
+  background:var(--green-color);
+  border-radius: 5rem;
+  color: var(--bg-color);
+  transition: background 0.5s ;
+}
+
+
+#menu-icon{
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
