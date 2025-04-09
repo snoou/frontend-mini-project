@@ -30,6 +30,10 @@ body{
   color: var(--text-color);
 }
 
+section{
+  padding: 4.5rem 0 1.5rem;
+}
+
 header{
   position: fixed;
   width: 100%;
@@ -104,4 +108,68 @@ header{
   cursor: pointer;
   z-index: 10001;
   display: none;
+}
+
+
+.container{
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  background: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.container img {
+  width: 400px ;
+  position: absolute;
+  bottom: -500px ;
+  right: 200px;
+}
+
+.home-text {
+  padding: 200px 300px ;
+}
+
+.home-text span {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--green-color);
+}
+
+.home-text h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1rem ;
+  background-color: var(--green-color);
+  font-weight: 400;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  color: var(--bg-color);
+  max-width: 160px;
+}
+
+.btn .bx {
+  padding: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 1rem;
+  font-size: 20px;
+  margin: auto;
+}
+
+.btn:hover{
+  background: var(--light-orange-color);
+  transition: 0.2s ease;
 }

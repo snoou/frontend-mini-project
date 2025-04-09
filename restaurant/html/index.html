@@ -8,6 +8,9 @@
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     </head>
     <body>
         <!-- Navbar -->
@@ -20,7 +23,7 @@
 
             <ul class="navbar">
                 <li><a href="#home" class="home-active"> Home </a></li>
-                <li><a href="#categories" >categories</a></li>
+                <li><a href="#categories">categories</a></li>
                 <li><a href="#products">products</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#customers">customers</a></li>
@@ -31,9 +34,52 @@
                 <span>Abdus Rahman</span>
                 <i class='bx bx-caret-down'></i>
             </div>
-
-
         </header>
-        
+
+        <!-- Home -->
+        <section class="home swiper" id="home">
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide container">
+                    <div class="home-text">
+                        <span>We are delicacy</span>
+                        <h1>Choose delicacy <br> the best healthy <br> chicken salad  </h1>
+                        <a href="#" class="btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <img src="../img/home1.png" alt="">
+                </div>
+
+                <!-- slide2 -->
+                <div class="swiper-slide container">
+                    <div class="home-text">
+                        <span>We are delicacy</span>
+                        <h1>Choose delicacy <br> the best healthy <br> chicken salad  </h1>
+                        <a href="#" class="btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <img src="../img/home3.png" alt="">
+                </div>
+
+                <!-- slide3 -->
+                <div class="swiper-slide container">
+                    <div class="home-text">
+                        <span>We are delicacy</span>
+                        <h1>Choose delicacy <br> the best healthy <br> chicken salad  </h1>
+                        <a href="#" class="btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <img src="../img/home3.png" alt="">
+                </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+
+        </section>
+
+        <!-- js -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script src="../script/script.js"></script>
     </body>
 </html>
