@@ -1,8 +1,10 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap");
+
 /* Global Styles */
 * {
-  font-family: "Poppins", sans-serif; /* Clean and modern font choice */
+  font-family: "Poppins", sans-serif;
+  /* Clean and modern font choice */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,14 +13,21 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
 }
+
 /* Color Palette */
 :root {
-  --green-color: #3cb815; /* Represents freshness and organic appeal */
-  --light-green-color: #c0eb7b; /* Light green for accents and highlights */
-  --orange-color: #ff7e00; /* Warm orange for call-to-action buttons */
-  --light-orange-color: #f75f1d; /* Interactive hover states */
-  --text-color: #1a2428; /* Dark text for readability */
-  --bg-color: #fff; /* Clean, white background */
+  --green-color: #3cb815;
+  /* Represents freshness and organic appeal */
+  --light-green-color: #c0eb7b;
+  /* Light green for accents and highlights */
+  --orange-color: #ff7e00;
+  /* Warm orange for call-to-action buttons */
+  --light-orange-color: #f75f1d;
+  /* Interactive hover states */
+  --text-color: #1a2428;
+  /* Dark text for readability */
+  --bg-color: #fff;
+  /* Clean, white background */
 }
 
 
@@ -26,15 +35,15 @@ img {
   width: 100%;
 }
 
-body{
+body {
   color: var(--text-color);
 }
 
-section{
+section {
   padding: 4.5rem 0 1.5rem;
 }
 
-header{
+header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -45,8 +54,8 @@ header{
   justify-content: space-between;
   background-color: var(--bg-color);
   box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
-  padding: 20px 100px ;
-  transition: 0.5s ;
+  padding: 20px 100px;
+  transition: 0.5s;
 }
 
 .profile {
@@ -65,21 +74,21 @@ header{
 }
 
 .profile span {
-  font-size: 13px ;
+  font-size: 13px;
   font-weight: 500;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.1rem ;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-color);
   column-gap: 0.5rem;
 }
 
 .logo .bx {
-  font-size: 24px ;
+  font-size: 24px;
   color: var(--orange-color);
 }
 
@@ -96,14 +105,14 @@ header{
 }
 
 .navbar a:hover {
-  background:var(--green-color);
+  background: var(--green-color);
   border-radius: 5rem;
   color: var(--bg-color);
-  transition: background 0.5s ;
+  transition: background 0.5s;
 }
 
 
-#menu-icon{
+#menu-icon {
   font-size: 24px;
   cursor: pointer;
   z-index: 10001;
@@ -111,7 +120,7 @@ header{
 }
 
 
-.container{
+.container {
   position: relative;
   width: 100%;
   min-height: 640px;
@@ -125,14 +134,14 @@ header{
 }
 
 .container img {
-  width: 400px ;
+  width: 400px;
   position: absolute;
-  bottom: -500px ;
+  bottom: -500px;
   right: 200px;
 }
 
 .home-text {
-  padding: 200px 300px ;
+  padding: 200px 300px;
 }
 
 .home-text span {
@@ -148,7 +157,7 @@ header{
 }
 
 .btn {
-  padding: 0.6rem 1rem ;
+  padding: 0.6rem 1rem;
   background-color: var(--green-color);
   font-weight: 400;
   border-radius: 5rem;
@@ -169,32 +178,45 @@ header{
   margin: auto;
 }
 
-.btn:hover{
+.btn:hover {
   background: var(--light-orange-color);
   transition: 0.2s ease;
 }
 
-.swiper-button-next{
-  background: url(../img/right-arrow.png);
-  background-repeat: no-repeat;
+.slide {
+  display: flex;
+}
+
+.slide-1 {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
   background-size: 100% auto;
-  background-position: center;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.swiper-button-next {
   margin-right: 20px;
-
+  background-image: url(../img/right-arrow.png);
+  right: 10px;
 }
 
-.swiper-button-next::after{
-   display: none;
-}
-
-.swiper-button-prev{
-  background: url(../img/left-arrow.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
+.swiper-button-prev {
   margin-left: 20px;
 
-}
-.swiper-button-prev::after{
-   display: none;
+  background-image: url(../img/left-arrow.png);
+  left: 10px;
 }
