@@ -173,3 +173,28 @@ header{
   background: var(--light-orange-color);
   transition: 0.2s ease;
 }
+
+.swiper-button-next{
+  background: url(../img/right-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  margin-right: 20px;
+
+}
+
+.swiper-button-next::after{
+   display: none;
+}
+
+.swiper-button-prev{
+  background: url(../img/left-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  margin-left: 20px;
+
+}
+.swiper-button-prev::after{
+   display: none;
+}
