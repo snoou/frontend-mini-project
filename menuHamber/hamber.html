@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>meno</title>
+        <style>
+        body{
+            background-color: rgb(37, 36, 36);
+            
+        }
+        #menu-toggle {
+    display: none;
+}
+
+#hamburger-button {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 40px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#hamburger-button .bar {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+#menu-toggle:checked ~ #hamburger-button .bar1 {
+    margin-left: 150px ;
+    transform: rotate(-720deg) scale(0);
+}
+#menu-toggle:checked ~ #hamburger-button .bar2 {
+    transform: rotate(-765deg);
+    margin-left: 150px ;
+    height: 6px;
+}
+#menu-toggle:checked ~ #hamburger-button .bar3 {
+    margin-left: 150px ;
+    height: 6px;
+    margin-top: -14px;
+    
+    transform: rotate(-855deg);
+}
+
+.sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgb(24, 24, 24);
+      padding-top: 80px;
+      padding-left: 20px;
+      transition: left 0.4s ease;
+      z-index: 1;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 0;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #00ffd5;
+    }
+
+
+#menu-toggle:checked ~.sidebar {
+    left: 0;
+}
+
+    </style>
+    </head>
+    <body>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" id="hamburger-button">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </label>
+
+        <nav class="sidebar">
+            <a href="#">صفحه اصلی</a>
+            <a href="#">درباره ما</a>
+            <a href="#">محصولات</a>
+            <a href="#">تماس با ما</a>
+        </nav>
+    </body>
+</html>
