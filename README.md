@@ -10,6 +10,8 @@ Click on a project to view the live demo:
 | Todo List | [View](https://snoou.github.io/frontend-mini-project/todo%20List/) |
 | restaurant | [View](https://snoou.github.io/frontend-mini-project/restaurant/html/) |
 | menuHamber | [View](https://snoou.github.io/frontend-mini-project/menuHamber) |
+| loader | [View](https://snoou.github.io/frontend-mini-project/loader) |
+
 
 
 
