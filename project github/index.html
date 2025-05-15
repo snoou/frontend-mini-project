@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+      rel='stylesheet'>
+    <title>GitHub User Search</title>
+    <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      padding: 30px;
+      background-color: #df4857;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .box-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box-main {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 1000px;
+    }
+    input {
+      padding: 16px;
+      border: 0.1px #727272 solid;
+    }
+    .search-btn, .clear-btn {
+      padding: 12px 0;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #333333;
+      color: white;
+      border: none;
+    }
+    .clear-btn {
+      background-color: #f4f4f4;
+      color: #727272;
+      display: none; /* ابتدا مخفی است */
+    }
+    .user-card, .repo-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-card img, .details img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .details img {
+      width: 80px;
+      height: 80px;
+    }
+    .back-btn {
+      margin: 10px 0;
+      display: inline-block;
+      cursor: pointer;
+      color: blue;
+    }
+    #loader {
+      display: none;
+      margin-top: 10px;
+    }
+    #warning {
+      color: #727272;
+      padding: 14px;
+      display: none;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <a href="#">github users</a>
+      <a href="#">time</a>
+      <a href="#">weather</a>
+    </header>
+
+    <div class="box-center">
+      <div class="box-main">
+        <div id="warning">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAABvklEQVRIS7WVSytFURTH7y1RUpQJGSiPjJQBmZCB8gEkGUmYEEleKcrAxDPlGcpAYuIjSMnAzKskkvLIRERJiOu36pzatrv2cdPd9evevf5r/8/a+659bjgUxxGOo3coyDybh9dCJRRAJtzBKWzBBtxoBWrmCSzohwFIdOzuFW0IJuDTzotmnkPSJhTFcGR75NbArbnGNk9BPIDcGIz91CO+FMOHH7DNVxAaFOMI8V0oA+04x9B6o5mXEpTtaWMBoQWWoFlJkqrlh78U3axgzlusmY8j9IBU1+0oYhBt2DY/J5DnWDSK1gcj5taj5O8QqzDNZQfSSq6+/2vlz/ikmuZpTB4dVYs0A+0wC60BudJ1L36l8vkOcnm08eA9oMOvTEmUHzUJIuYxXBCQC/TfcYaBdMyPM55m3uZwvkeb944k3ZE3idZlm8t133csWkWrh3WoU/K+iBfCiW0u82VociyUG1pu7dhMn2LS6Qfs1ktGOARXv2ubO0YogTfNXOL5sA1ZjiOyJXm/V8G1KWiXJoMk6efqgAfIGa+B9P+TnRv0TyQtJRemEeRi+EMu3CLI++hKKyDIPIaT+Z0aV/NvwoBKGNjfwQcAAAAASUVORK5CYII="
+            alt="warning"> Please enter something
+        </div>
+        <input type="text" id="searchInput" placeholder="Search Users">
+        <button class="search-btn" onclick="searchUsers()">Submit Query</button>
+        <button class="clear-btn" onclick="clearResults()">Clear</button>
+
+        <div id="loader">Loading...</div>
+        <div id="results"></div>
+      </div>
+    </div>
+
+    <script>
+    let lastQuery = "";
+
+    document.getElementById("searchInput").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        searchUsers();
+      }
+    });
+
+    function showLoader() {
+      document.getElementById("loader").style.display = "block";
+    }
+
+    function hideLoader() {
+      document.getElementById("loader").style.display = "none";
+    }
+
+    function clearResults() {
+      document.getElementById("results").innerHTML = "";
+      document.querySelector(".clear-btn").style.display = "none"; // مخفی کردن دکمه
+    }
+
+    async function searchUsers() {
+      const query = document.getElementById("searchInput").value.trim();
+      const warningDiv = document.getElementById("warning");
+
+      if (!query) {
+        warningDiv.style.display = "flex";
+        return;
+      } else {
+        warningDiv.style.display = "none";
+      }
+
+      lastQuery = query;
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      showLoader();
+
+      try {
+        const res = await fetch(`https://api.github.com/search/users?q=${query}`);
+        const data = await res.json();
+
+        hideLoader();
+
+        if (data.items && data.items.length > 0) {
+          document.querySelector(".clear-btn").style.display = "block"; // نمایش دکمه
+        }
+
+        data.items?.forEach(user => {
+          const div = document.createElement("div");
+          div.className = "user-card";
+
+          const img = document.createElement("img");
+          img.src = user.avatar_url;
+          img.alt = user.login;
+          img.onload = () => hideLoader();
+
+          const span = document.createElement("span");
+          span.textContent = user.login;
+
+          div.appendChild(img);
+          div.appendChild(span);
+          div.onclick = () => loadUserDetails(user.login);
+          resultsDiv.appendChild(div);
+        });
+      } catch (error) {
+        console.error("Search error:", error);
+        hideLoader();
+      }
+    }
+
+    async function loadUserDetails(username) {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      showLoader();
+
+      try {
+        const detailsRes = await fetch(`https://api.github.com/users/${username}`);
+        const user = await detailsRes.json();
+
+        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`);
+        const repos = await reposRes.json();
+
+        hideLoader();
+
+        resultsDiv.innerHTML = `
+          <span class="back-btn" onclick="searchUsers()">← Back to search results</span>
+          <div class="details">
+            <img src="${user.avatar_url}" alt="${user.login}" />
+            <h2>${user.name || user.login}</h2>
+            <p>${user.bio || "No bio available"}</p>
+            <p><strong>Location:</strong> ${user.location || "Unknown"}</p>
+          </div>
+          <h3>Latest Repositories</h3>
+        `;
+
+        repos.forEach(repo => {
+          const repoDiv = document.createElement("div");
+          repoDiv.className = "repo-card";
+          repoDiv.innerHTML = `
+            <div>
+              <strong>${repo.name}</strong><br>
+              <small>${repo.description || "No description"}</small>
+            </div>
+          `;
+          resultsDiv.appendChild(repoDiv);
+        });
+      } catch (error) {
+        console.error("User details error:", error);
+        hideLoader();
+      }
+    }
+  </script>
+  </body>
+</html>
