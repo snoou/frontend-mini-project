@@ -21,7 +21,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .box-main {
+  .box-main ,#box-loginUser {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -82,4 +82,101 @@ body {
     display: none;
     align-items: center;
     background-color: #f4f4f4;
+  }
+
+
+  /* user */
+
+  .box-loginUser{
+    
+  }
+
+  .backToSearch a{
+    text-decoration: none;
+    padding: 10px 20px ;
+    background-color: #d5d1d1;
+    color: #211d1d;
+    margin-right: 10px ;
+    border: 8px ;
+  }
+
+  .infUser{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 0.5px rgb(212, 212, 215);
+    padding: 10px ;
+
+  }
+
+  .prof , .bio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px ;
+  }
+
+  .prof img {
+    border-radius: 50%;
+  }
+
+  .bio{
+    gap: 5px ;
+    align-items: start;
+  }
+
+  .bio h3 {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .bio a{
+    text-decoration: none;
+    padding: 10px 20px ;
+    background-color: #333333;
+    color: white;
+    border-radius: 2px ;
+  }
+
+  .card {
+    border: solid 0.5px rgb(212, 212, 215);
+    padding: 25px ;
+    display: flex;
+    justify-content: center;
+    gap: 20px ;
+    font-size: 12px ;
+  }
+
+  .badge{
+    border-radius: 3px;
+    color: white;
+    padding: 5px 10px ;
+  }
+
+  .badge-primary{
+    background-color: #dc3545;
+  }
+  .badge-light{
+    background-color: #968d8d;
+  }
+  .badge-success{
+    background-color: #28a745;
+  }
+  .badge-dark{
+    background-color: #333333;
+  }
+
+  .rep{
+    border: solid 0.5px rgb(212, 212, 215);
+    padding: 20px ;
+    margin-top: 16px ;
+  }
+  .rep a{
+    text-decoration: none;
+    color: red;
+    font-size: 18px;
+  }
+  .fa-times{
+    color: #dc3545;
+    font-size: 20px ;
   }

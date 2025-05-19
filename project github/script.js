@@ -65,7 +65,7 @@ async function searchUsers() {
       div.appendChild(img);
       div.appendChild(h3);
       div.appendChild(more)
-      more.onclick = () => loadUserDetails(user.login);
+      more.href = `information.html?username=${user.login}`;
       resultsDiv.appendChild(div);
     });
   } catch (error) {
@@ -75,45 +75,3 @@ async function searchUsers() {
 }
 
 document.getElementById('search-btn').addEventListener('click' , searchUsers)
-
-async function loadUserDetails(username) {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
-  showLoader();
-
-  try {
-    const detailsRes = await fetch(`https://api.github.com/users/${username}`);
-    const user = await detailsRes.json();
-
-    const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`);
-    const repos = await reposRes.json();
-
-    hideLoader();
-
-    resultsDiv.innerHTML = `
-      <span class="back-btn" onclick="searchUsers()">← Back to search results</span>
-      <div class="details">
-        <img src="${user.avatar_url}" alt="${user.login}" />
-        <h2>${user.name || user.login}</h2>
-        <p>${user.bio || "No bio available"}</p>
-        <p><strong>Location:</strong> ${user.location || "Unknown"}</p>
-      </div>
-      <h3>Latest Repositories</h3>
-    `;
-
-    repos.forEach(repo => {
-      const repoDiv = document.createElement("div");
-      repoDiv.className = "repo-card";
-      repoDiv.innerHTML = `
-        <div>
-          <strong>${repo.name}</strong><br>
-          <small>${repo.description || "No description"}</small>
-        </div>
-      `;
-      resultsDiv.appendChild(repoDiv);
-    });
-  } catch (error) {
-    console.error("User details error:", error);
-    hideLoader();
-  }
-}
