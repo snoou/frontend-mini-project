@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #282828;
+
 }
 
 .clock {
@@ -32,7 +33,6 @@ body {
     height: 15px;
     background: #747474;
     border-radius: 50%;
-    z-index: 999;
 
 }
 
@@ -95,7 +95,7 @@ body {
     border-radius: 6px 6px 0 0;
 } 
 
-.digit p{
+.digit{
     font-family:'Times New Roman', Times, serif;
     font-size: 50px ;
     font-weight: 600;
