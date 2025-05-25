@@ -1,0 +1,690 @@
+:root {
+    --primary-color: #fc7523;
+    --text-color: #989898;
+    --bg: #f5f5f1;
+    --search-color: #d2d2d2;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.ios {
+    padding: 3px 5px;
+    line-height: 1;
+    border: 0.1em solid transparent;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    font-size: 13px;
+    color: white;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.header {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.header:hover {
+    color: var(--primary-color);
+}
+
+.head {
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.head-1 {
+    width: 300px;
+    display: flex;
+    list-style-type: none;
+    gap: 16px;
+}
+
+.info {
+    width: 300px;
+    color: var(--text-color);
+    font-size: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.image-container {
+    height: 615px;
+    background-image: url('https://avada.website/food/wp-content/uploads/sites/118/2019/02/slide1-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+}
+
+.bg {
+    margin-top: 127px;
+    background-image: none;
+}
+
+.title-img {
+    flex-direction: column;
+    width: 705px;
+    height: 225px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.today {
+    position: relative;
+    top: 15px;
+    width: 150px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-img p {
+    font-size: 45px;
+    font-weight: 900;
+
+}
+
+.title-img :nth-child(2) {
+    font-size: 17px;
+    color: var(--text-color);
+    margin-top: 12px;
+}
+
+.list-item-ul {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    gap: 40px;
+    font-size: 16px;
+    display: flex;
+
+}
+
+.link:hover {
+    color: var(--primary-color);
+}
+
+.link {
+    position: relative;
+    color: var(--text-color);
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.space {
+    margin: 30px 0;
+}
+
+.search button i {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.search button {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 0.5px solid #d3cccc;
+    border-right: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(248, 248, 248, 0.6),
+        0 0 40px rgba(220, 220, 220, 0.7);
+    border-radius: 3px 0px 0px 3px;
+}
+
+.search input {
+    background-color: white;
+    padding: 20px 0;
+    outline: none;
+    border: 0.5px solid #d3cccc;
+    border-left: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(248, 248, 248, 0.6),
+        0 0 40px rgba(220, 220, 220, 0.7);
+    width: 750px;
+    display: flex;
+    border-radius: 0 3px 3px 0;
+    font-size: 18px;
+    color: var(--search-color);
+}
+
+.food {
+    margin-top: -80px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.h1-food {
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: 100;
+    color: var(--text-color);
+}
+
+.food-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 1200px;
+    padding: 30px 40px;
+}
+
+.food-item {
+    display: flex;
+}
+
+.child-food {
+    width: 400px;
+    text-align: center;
+}
+
+.child-food img {
+    width: 380px;
+    object-fit: cover;
+}
+
+.child-food img :hover {
+    transform: scale(1.1);
+}
+
+.text-food {
+    padding: 0 35px;
+}
+
+.text-food h2 {
+    font-weight: 400;
+}
+
+.text-food p {
+    color: var(--text-color);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.text-food p span {
+    color: black;
+
+}
+
+.img-hover {
+    width: 375px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.img-hover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-hover:hover img {
+    transform: scale(1.1);
+}
+
+.page3 {
+    color: var(--text-color);
+    margin: 80px 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3 h2 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.page3 p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.page3 div {
+    width: 650px;
+    text-align: center;
+}
+
+.lunch {
+    width: 577px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+
+
+}
+
+.lunch:hover {
+    transform: scale(1.03);
+}
+
+.lunch img {
+    width: 100%;
+}
+
+.textLunch {
+    padding: 20px 25px;
+}
+
+.textLunch h2 {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.textLunch p a {
+    color: var(--text-color);
+
+
+}
+
+.textLunch p {
+    color: var(--text-color);
+    font-size: 17px;
+
+    margin: 20px 0;
+    line-height: 2;
+}
+
+.textLunch hr {
+    border: solid 0.5px var(--text-color);
+}
+
+.button-lunch {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+
+}
+
+.main-pag4 {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+
+}
+
+.imgtwo {
+    display: flex;
+    gap: 20px;
+}
+
+
+.img-orang {
+    width: 280px;
+    height: 245px;
+    display: grid;
+    cursor: pointer;
+}
+
+.img-orang>* {
+    grid-area: 1 / 1;
+}
+
+.img-orang img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    margin: 0px 12px 12px 0;
+    transition: all 0.3s ease;
+}
+
+.hover-layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+}
+
+.img-orang:hover .hover-layer {
+    opacity: 1;
+    background-color: rgba(255, 165, 0, 0.6);
+}
+
+.marg {
+    margin: 20px 0;
+}
+
+.coll-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.bg-white {
+    background-color: white;
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px 10px;
+
+}
+
+.text-coll {
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: 16px;
+
+}
+
+.text-coll:hover {
+    background-color: var(--primary-color);
+    color: white;
+
+}
+
+.coll-item div img {
+    width: 90px;
+}
+
+
+.blog {
+    color: var(--text-color);
+    align-items: center;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.blog h3 {
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.space {
+    margin: 40px 0;
+}
+
+.blog-text {
+    width: 560px;
+}
+
+.more {
+    text-decoration: underline;
+
+}
+
+.corner {
+    width: 800px;
+}
+
+.farm {
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.food-img img {
+    width: 400px;
+    display: flex;
+
+}
+
+
+
+.bg-orange {
+    background-color: var(--primary-color);
+    text-align: center;
+
+    padding: 15px;
+}
+
+.bg-orange a {
+    color: white;
+}
+
+.mar {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pag6 {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.pag6-1 {
+    width: 800px;
+}
+
+.pag6-2 {
+    width: 400px;
+}
+
+.bg-sefid {
+    background-color: white;
+    margin: 30px 0;
+    width: 376px;
+}
+
+.bag-white div {
+    background-color: white;
+    padding: 12px;
+    margin-top: 40px;
+}
+
+.table {
+    margin-top: 40px;
+
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.table th {
+    padding: 15px 73px;
+    border: 1px solid;
+}
+
+
+.recent {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0 ;
+    color: var(--text-color);
+}
+
+.recent img {
+    border-radius: 50px ;
+}
+
+.text-marg h4{
+    margin-bottom: 10px ;
+}
+
+.bag-7{
+        height: 615px;
+        background-image: url('https://avada.website/food/wp-content/uploads/sites/118/2019/03/subscribe-sec-bg.png');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+}
+
+.text-size{
+    display: flex;
+    flex-direction: column;
+    gap: 30px ;
+    text-align: center;
+    color: var(--text-color);
+    width: 900px ;
+    margin: 10px 0 ;
+    font-size: 20px ;
+}
+
+.input-finall input{
+    margin-right: 30px ;
+    width: 450px ; 
+    padding: 20px 14px ;
+    border: solid 1px  #989898;
+    border-radius: 3px ;
+}
+
+.input-finall button {
+    padding: 21px 60px ;
+    border-radius: 3px ;
+    background-color: var(--primary-color);
+    border: none ;
+}
+
+.bag-8{
+    display: flex;
+    overflow: hidden;
+   
+    
+}
+
+.w-size{
+    width: 480px ;
+    height: 312px ;
+    transition: transform 0.3s ease;
+
+}
+
+.w-size:hover{
+    transform: scale(1.02);
+}
+
+.page8{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 50px ;
+    padding: 30px ;
+    
+}
+
+.size-w{
+    margin: 20px 0 ;
+}
+.size-w i {
+    margin: 0 10px ;
+}
+.page8-1 img {
+    width: 200px ;
+}
+
+.link-item{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px ;
+}
+
+.link-item a {
+    color: black;
+}
+
+.page-2{
+    width: 300px ;
+}
+
+.aling{
+    width: 250px ;
+    display: flex;
+    gap: 20px ;
+    flex-direction: column;
+}
+
+.aling h2 {
+    font-weight: 300;
+    color: var(--primary-color);
+
+}
+
+.aling div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px ;
+    font-size: 18px ;
+}
