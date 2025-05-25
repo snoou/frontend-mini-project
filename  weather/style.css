@@ -1,0 +1,92 @@
+body {
+      direction: rtl;
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('backgrund.png');
+      background-size: cover;
+      
+    }
+
+
+
+    .main-box {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .box-infor {
+      width: 350px;
+      background: rgba(172, 42, 42, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .box-infor input,
+    .box-infor button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .input {
+      width: 60%;
+      background: rgba(255, 255, 255, 0.6);
+      color: #000;
+    }
+
+    .input::placeholder {
+      color: #333;
+    }
+
+    .button {
+      background-color: #00c9a7;
+      color: white;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #00b497;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+
+    .info{
+        color: rgb(42, 45, 49);
+    }
+
+    .info-box{
+        display: flex; 
+        gap: 80px ;
+    }
+
+    .weather-info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px ;
+        align-items: center;
+    }
+
+    .weather-info img {
+      width: 100px ;
+    }
+
+    .weather-info p {
+      font-size: 24px ;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
