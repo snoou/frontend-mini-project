@@ -12,6 +12,8 @@ Click on a project to view the live demo:
 | menuHamber | [View](https://snoou.github.io/frontend-mini-project/menuHamber) |
 | project github | [View](https://snoou.github.io/frontend-mini-project/project%20github/) |
 | clock | [View](https://snoou.github.io/frontend-mini-project/clock/) |
+| Food | [View](https://snoou.github.io/frontend-mini-project/Food) |
+
 
 
 
