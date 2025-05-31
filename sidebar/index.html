@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infinite Draggable Image Slider</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      user-select: none;
+    }
+
+    .said {
+      display: flex;
+      width: 700px;
+      height: 400px;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      cursor: grab;
+      border-radius: 10px;
+      scroll-behavior: auto;
+    }
+
+    .said:active {
+      cursor: grabbing;
+    }
+
+    .said img {
+      flex-shrink: 0;
+      width: 700px;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="said" id="slider">
+    <img src="https://www.jowhareh.com/images/Jowhareh/galleries_3/large_54ea030b-898c-465c-ad44-af33aa0c3131.webp" alt="img1">
+    <img src="https://www.jowhareh.com/images/Jowhareh/galleries_3/large_15abfcef-d9c5-4032-8429-568f88eb86e2.webp" alt="img2">
+    <img src="https://www.jowhareh.com/images/Jowhareh/galleries_3/large_82d94246-2e1e-4a5b-90f2-dcfd705de0cb.webp" alt="img3">
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const images = slider.querySelectorAll('img');
+    const imageWidth = 700;
+
+    images.forEach(img => {
+      const clone = img.cloneNode(true);
+      slider.appendChild(clone);
+    });
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let autoScrollInterval;
+
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollInterval = setInterval(() => {
+        smoothScrollTo(slider.scrollLeft + imageWidth);
+      }, 5000);
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollInterval) clearInterval(autoScrollInterval);
+    }
+
+    function smoothScrollTo(target) {
+      slider.scrollTo({
+        left: target,
+        behavior: 'smooth'
+      });
+    }
+
+    function snapToImage() {
+      const scrollPos = slider.scrollLeft;
+      // پیدا کردن ایندکس نزدیکترین تصویر به scrollLeft
+      const index = Math.round(scrollPos / imageWidth);
+      const targetPos = index * imageWidth;
+      smoothScrollTo(targetPos);
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      if (isDown) {
+        isDown = false;
+        snapToImage();
+        startAutoScroll();
+      }
+    });
+
+    slider.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        snapToImage();
+        startAutoScroll();
+      }
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      stopAutoScroll();
+    });
+
+    slider.addEventListener('touchend', () => {
+      if (isDown) {
+        isDown = false;
+        snapToImage();
+        startAutoScroll();
+      }
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener('scroll', () => {
+      const scrollWidth = slider.scrollWidth / 2;
+      if (slider.scrollLeft >= scrollWidth) {
+        slider.scrollLeft = slider.scrollLeft - scrollWidth;
+      } else if (slider.scrollLeft <= 0) {
+        slider.scrollLeft = slider.scrollLeft + scrollWidth;
+      }
+    });
+
+    window.onload = () => {
+      slider.scrollLeft = slider.scrollWidth / 2;
+      startAutoScroll();
+    };
+  </script>
+</body>
+</html>
