@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <title>Spline Scroll Interaction</title>
+        <script type="module"
+            src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet" />
+        <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      overflow-y: scroll; 
+      scrollbar-width: none; 
+      -ms-overflow-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 2rem;
+      background-color: #0e0e0e;
+    }
+
+    spline-viewer {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      display: block;
+    }
+
+    .header{
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2;
+        background-color: #0e0e0e;
+    }
+
+    .header ul {
+        display: flex;
+        gap: 100px ;
+        font-size: 1.2rem;
+        list-style-type: none;  
+    }
+
+    .header ul li a {
+        color: rgb(104, 97, 97);
+        font-weight: 500;
+    }
+
+    .header ul li a:hover{
+        color: white;
+    }
+
+    .logo h1{
+        color: #f09f2d;
+        font-weight: 300;
+
+    }
+
+    .logo-cat img  {
+        width: 95px ;
+    }
+
+    .prof{
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 600px ;
+        padding: 40px ;
+
+    }
+
+    .prof h1 {
+        color: #f09f2d;
+        font-size: 70px ;
+        font-weight: 800;
+        
+
+    }
+
+    .prof-information{
+        color: white;
+        padding: 0  40px  0  40px  ;
+    }
+
+    .left {
+        justify-content: end;
+    }
+
+    .skill{
+        color: white;
+
+    }
+
+    .skill p {
+        font-size: 20px ;
+    }
+
+    .level{
+        background-color: gray; width: 500px ; height: 16px ; border-radius: 8px ;
+
+    }
+
+    .level div {
+          background-color: green; height: 16px ; border-radius: 8px 0 0  8px  ;
+    }
+
+
+    .level-css , .level-html{
+        width: 80%;
+    }
+
+    .level-tailwind{
+        width: 60% ;
+    }
+
+    .level-js{
+        width: 70%;
+    }
+
+    .level-english{
+        width: 50%;
+    }
+
+    .level-python{
+        width: 65%;
+    }
+
+
+
+
+
+  </style>
+    </head>
+    <body>
+
+        <spline-viewer
+            url="https://prod.spline.design/xEZvJOKSxTsj9pSP/scene.splinecode"></spline-viewer>
+
+        <div class="header">
+            <div class="logo">
+                <h1>SNOOU</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Github</a>
+                </li>
+
+                <li>
+                    <a href="#">Linkdin</a>
+                </li>
+
+                <li>
+                    <a href="#">telegram</a>
+                </li>
+
+                <li>
+                    <a href="#">instagram</a>
+                </li>
+            </ul>
+
+            <div class="logo-cat">
+                <img src="Copilot_20250602_015049-removebg-preview.png"
+                    alt="cat">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="prof">
+                <h1>
+                    sajjad yarahmadi
+                </h1>
+                <div class="prof-information">
+                    <p>
+                        Frontend Developer & UI/UX Designer
+                        📍 Tehran, Iran | 🎂 January 15, 2004
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section left">
+            <div class="prof">
+                <h2 style="color: #f09f2d;">Skills</h2>
+                <div class="skill">
+                    <p>html</p>
+                    <div class="level">
+                        <div class="level-html"></div>
+                    </div>
+
+                     <p>css</p>
+                    <div class="level">
+                        <div class="level-css"></div>
+                    </div>
+
+                     <p>Tailwind</p>
+                    <div class="level">
+                        <div class="level-tailwind"></div>
+                    </div>
+
+                     <p>js</p>
+                    <div class="level">
+                        <div class="level-js"></div>
+                    </div>
+
+                     <p>English</p>
+                    <div class="level">
+                        <div class="level-english"></div>
+                    </div>
+
+                     <p>python</p>
+                    <div class="level">
+                        <div class="level-python"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
