@@ -1,7 +1,0 @@
- `https://openweathermap.org/img/wn/${iconCode}@2x.png`  ایکون
-
- const apiKey = '5642832d0d9af397f350faf6bba63741';
-
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fa`;
-
-
