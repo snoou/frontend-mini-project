@@ -2,8 +2,7 @@ const apiKey = '5642832d0d9af397f350faf6bba63741';
 const button = document.getElementById('button');
 const input = document.getElementById('input');
 const weather = document.getElementById('weather');
-const loading = document.getElementById('loading'); // 🔹 گرفتن المنت لودینگ
-
+const loading = document.getElementById('loading'); 
 function searchWeather() {
   const city = input.value.trim();
   if (city === '') {
