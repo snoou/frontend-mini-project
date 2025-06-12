@@ -1,0 +1,163 @@
+ html,
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: 'Roboto', sans-serif;
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+     overflow-y: scroll;
+     scrollbar-width: none;
+     -ms-overflow-style: none;
+     background-color: #0e0e0e;
+
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ .section {
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     font-size: 2rem;
+ }
+
+ spline-viewer {
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     display: block;
+ }
+
+ .header {
+     position: fixed;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     z-index: 2;
+     background-color: #0e0e0e;
+ }
+
+ .header ul {
+     display: flex;
+     gap: 100px;
+     font-size: 1.2rem;
+     list-style-type: none;
+ }
+
+ .header ul li a {
+     color: rgb(104, 97, 97);
+     font-weight: 500;
+ }
+
+ .header ul li a:hover {
+     color: white;
+ }
+
+ .logo h1 {
+     color: #f09f2d;
+     font-weight: 300;
+
+ }
+
+ .logo-cat img {
+     width: 95px;
+ }
+
+ .prof {
+     z-index: 1;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 600px;
+     padding: 40px;
+
+ }
+
+ .prof h1 {
+     color: #f09f2d;
+     font-size: 70px;
+     font-weight: 800;
+
+
+ }
+
+ .prof h2 {
+    color: #f09f2d;
+ }
+
+ .prof-information {
+     color: white;
+     padding: 0 40px 0 40px;
+ }
+
+ .left {
+     justify-content: end;
+ }
+
+ .skill {
+     color: white;
+
+ }
+
+ .skill p {
+     font-size: 20px;
+ }
+
+ .level {
+     background-color: #391414;
+     width: 500px;
+     height: 16px;
+     border-radius: 8px;
+
+ }
+
+ .level div {
+     background-color: #f09f2d;
+     height: 16px;
+     border-radius: 8px 0 0 8px;
+ }
+
+ .bar {
+     width: 0;
+    transition: width 15s ease;
+    float: left;
+ }
+ 
+ .min {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f09f2d;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+.slider-track {
+  display: flex;
+  gap: 400px; /* فاصله بین لینک‌ها */
+  width: 100%;
+  animation: scrollRight 30s linear infinite;
+}
+
+.site {
+  background-color: black;
+  border-radius: 8px;
+  padding: 20px 30px ;
+  color: white;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

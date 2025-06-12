@@ -8,145 +8,10 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet" />
-        <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      overflow-y: scroll; 
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-    }
 
-    a{
-        text-decoration: none;
-    }
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    .section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 2rem;
-      background-color: #0e0e0e;
-    }
-
-    spline-viewer {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      display: block;
-    }
-
-    .header{
-        position: fixed;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        z-index: 2;
-        background-color: #0e0e0e;
-    }
-
-    .header ul {
-        display: flex;
-        gap: 100px ;
-        font-size: 1.2rem;
-        list-style-type: none;  
-    }
-
-    .header ul li a {
-        color: rgb(104, 97, 97);
-        font-weight: 500;
-    }
-
-    .header ul li a:hover{
-        color: white;
-    }
-
-    .logo h1{
-        color: #f09f2d;
-        font-weight: 300;
-
-    }
-
-    .logo-cat img  {
-        width: 95px ;
-    }
-
-    .prof{
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 600px ;
-        padding: 40px ;
-
-    }
-
-    .prof h1 {
-        color: #f09f2d;
-        font-size: 70px ;
-        font-weight: 800;
-        
-
-    }
-
-    .prof-information{
-        color: white;
-        padding: 0  40px  0  40px  ;
-    }
-
-    .left {
-        justify-content: end;
-    }
-
-    .skill{
-        color: white;
-
-    }
-
-    .skill p {
-        font-size: 20px ;
-    }
-
-    .level{
-        background-color: gray; width: 500px ; height: 16px ; border-radius: 8px ;
-
-    }
-
-    .level div {
-          background-color: green; height: 16px ; border-radius: 8px 0 0  8px  ;
-    }
-
-
-    .level-css , .level-html{
-        width: 80%;
-    }
-
-    .level-tailwind{
-        width: 60% ;
-    }
-
-    .level-js{
-        width: 70%;
-    }
-
-    .level-english{
-        width: 50%;
-    }
-
-    .level-python{
-        width: 65%;
-    }
-
-
-
-
-
-  </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
@@ -158,20 +23,29 @@
                 <h1>SNOOU</h1>
             </div>
             <ul>
-                <li>
-                    <a href="#">Github</a>
+                <li data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500">
+                    <a href="https://github.com/snoou">Github</a>
                 </li>
 
-                <li>
-                    <a href="#">Linkdin</a>
+                <li data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="2000">
+                    <a
+                        href="https://www.linkedin.com/in/sajjadyarahmadi/">Linkdin</a>
                 </li>
 
-                <li>
-                    <a href="#">telegram</a>
+                <li data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="2500">
+                    <a href="https://t.me/snooudiv">Telegram</a>
                 </li>
 
-                <li>
-                    <a href="#">instagram</a>
+                <li data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="3000">
+                    <a href>YouTube</a>
                 </li>
             </ul>
 
@@ -180,8 +54,10 @@
                     alt="cat">
             </div>
         </div>
-
-        <div class="section">
+        <div id="right-anchor"></div>
+        <div class="section" data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500">
             <div class="prof">
                 <h1>
                     sajjad yarahmadi
@@ -195,44 +71,82 @@
 
             </div>
         </div>
+        <div id="skills" class="min" data-aos="fade-up"
+            data-aos-duration="3000">
 
-        <div class="section left">
+            <div class="slider-track">
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/todo%20List/">Todo
+                    List</a>
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/project%20github/">Github
+                    Users</a>
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/Food/">Restaurant</a>
+                <a class="site" href="https://github.com/snoou/Tree">Tree</a>
+               
+
+
+
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/todo%20List/">Todo
+                    List</a>
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/project%20github/">Github
+                    Users</a>
+                <a class="site"
+                    href="https://snoou.github.io/frontend-mini-project/Food/">Restaurant</a>
+                <a class="site" href="https://github.com/snoou/Tree">Tree</a>
+                
+            </div>
+        </div>
+        <div id="left-anchor"></div>
+        <div class="section left" data-aos="fade-left"
+            data-aos-anchor="#left-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500">
             <div class="prof">
-                <h2 style="color: #f09f2d;">Skills</h2>
+                <h2>Skills</h2>
                 <div class="skill">
                     <p>html</p>
                     <div class="level">
-                        <div class="level-html"></div>
+                        <div class="bar" data-level="90%"></div>
                     </div>
 
-                     <p>css</p>
+                    <p>css</p>
                     <div class="level">
-                        <div class="level-css"></div>
+                        <div class="bar" data-level="80%"></div>
                     </div>
 
-                     <p>Tailwind</p>
+                    <p>Tailwind</p>
                     <div class="level">
-                        <div class="level-tailwind"></div>
+                        <div class="bar" data-level="60%"></div>
                     </div>
 
-                     <p>js</p>
+                    <p>js</p>
                     <div class="level">
-                        <div class="level-js"></div>
+                        <div class="bar" data-level="70%"></div>
                     </div>
 
-                     <p>English</p>
+                    <p>English</p>
                     <div class="level">
-                        <div class="level-english"></div>
+                        <div class="bar" data-level="65%"></div>
                     </div>
 
-                     <p>python</p>
+                    <p>python</p>
                     <div class="level">
-                        <div class="level-python"></div>
+                        <div class="bar" data-level="55%"></div>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <script src="script.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+    AOS.init()
+</script>
 
     </body>
 </html>
