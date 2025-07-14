@@ -1,0 +1,114 @@
+* {
+    font-family: 'Vazirmatn', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body {
+    background-image: url('backIran.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 50px;
+    overflow: hidden;
+  }
+
+  #container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.6;
+    animation: ghostFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+    transition: opacity 0.3s;
+  }
+
+  @keyframes ghostFloat {
+    0% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-15px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+  }
+
+  model-viewer {
+    width: 200px;
+    height: 200px;
+    cursor: grab;
+  }
+
+ 
+
+  .select {
+    background-color: #5c4949;
+    border: none;
+    width: 140px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .select:hover {
+    background-color: #6e5a5a;
+  }
+
+  .select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #c0a3a3;
+  }
+
+  .but {
+    background-color: #260707;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  
+
+ .text , h1 {
+  background: rgba(40, 10, 10, 0.6);
+  color: #ffe4cc;
+  font-size: 22px;
+  padding: 12px 20px;
+  border: 1px solid #8b3a3a;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  
+}
+h1 {
+    color: white;
+    width: 100%;
+    margin: 15px 0 ;
+    border-radius:0 ;
+    border-left: 0;
+    border-right: 0;
+  }
+
+
+  .model {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+  }
