@@ -312,16 +312,14 @@ const or = [
   "نه",
 ];
 
-document.getElementById('but').addEventListener('click', function(e) {
+document.getElementById('but').addEventListener('click', function (e) {
   e.preventDefault();
 
   const select = document.getElementById('select');
-  const container = document.getElementById('model');
+  const container = document.getElementById('output');
 
-  const existingP = container.querySelector('spam.text');
-  if (existingP) {
-    container.removeChild(existingP);
-  }
+  
+  container.innerHTML = '';
 
   let data = [];
   switch (select.value) {
@@ -337,66 +335,12 @@ document.getElementById('but').addEventListener('click', function(e) {
     case 'or':
       data = or;
       break;
-    default:
-      data = [];
   }
 
   if (data.length > 0) {
-    const p = document.createElement('spam');
+    const p = document.createElement('span');
     p.textContent = data[Math.floor(Math.random() * data.length)];
     p.className = 'text';
     container.appendChild(p);
   }
 });
-
-
-
-    const model = document.getElementById("model");
-
-    let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
-
-    let posX = window.innerWidth / 2 - 100;
-    let posY = window.innerHeight / 2 - 100;
-
-    model.style.transform = `translate(${posX}px, ${posY}px)`;
-
-    model.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      offsetX = e.clientX - posX;
-      offsetY = e.clientY - posY;
-      model.style.cursor = "grabbing";
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      posX = e.clientX - offsetX;
-      posY = e.clientY - offsetY;
-      model.style.transform = `translate(${posX}px, ${posY}px)`;
-    });
-
-    window.addEventListener("mouseup", () => {
-      isDragging = false;
-      model.style.cursor = "grab";
-    });
-
-    // موبایل
-    model.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      const touch = e.touches[0];
-      offsetX = touch.clientX - posX;
-      offsetY = touch.clientY - posY;
-    });
-
-    window.addEventListener("touchmove", (e) => {
-      if (!isDragging) return;
-      const touch = e.touches[0];
-      posX = touch.clientX - offsetX;
-      posY = touch.clientY - offsetY;
-      model.style.transform = `translate(${posX}px, ${posY}px)`;
-    });
-
-    window.addEventListener("touchend", () => {
-      isDragging = false;
-    });
