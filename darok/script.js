@@ -336,7 +336,7 @@ document.getElementById('but').addEventListener('click', function (e) {
       data = or;
       break;
   }
-
+ 
   if (data.length > 0) {
     const p = document.createElement('span');
     p.textContent = data[Math.floor(Math.random() * data.length)];
