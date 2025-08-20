@@ -17,7 +17,8 @@ Click on a project to view the live demo:
 | slider | [View](https://snoou.github.io/frontend-mini-project/sidebar) |
 | darok | [View](https://snoou.github.io/frontend-mini-project/darok) |
 | random-food | [View](https://snoou.github.io/frontend-mini-project/random-food/) |
-| random-food | [View](https://snoou.github.io/frontend-mini-project/3D/) |
+| 3D | [View](https://snoou.github.io/frontend-mini-project/3D/) |
+| CV-3D | [View](https://snoou.github.io/frontend-mini-project/cv-3D/) |
 
 
 
