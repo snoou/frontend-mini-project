@@ -14,7 +14,6 @@ Click on a project to view the live demo:
 | clock | [View](https://snoou.github.io/frontend-mini-project/clock/) |
 | Food | [View](https://snoou.github.io/frontend-mini-project/Food) |
 | weather | [View](https://snoou.github.io/frontend-mini-project/weather) |
-| Meal | [View](https://snoou.github.io/frontend-mini-project/Meal) |
 | slider | [View](https://snoou.github.io/frontend-mini-project/sidebar) |
 | darok | [View](https://snoou.github.io/frontend-mini-project/darok) |
 | random-food | [View](https://snoou.github.io/frontend-mini-project/random-food/) |
