@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+
+<body class="bg-black">
+
+    <header>
+        <div id="" style="
+           mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent); 
+           -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);"
+            class="w-[1440px] bg-cover mx-auto h-[688px] bg-center flex flex-col shadow-2xl">
+            <div class="flex items-center justify-around">
+                <img class="w-30 my-4" src="../img /IMDB logo.svg" alt="">
+                <div class="relative w-[900px] ml-4 group">
+                    <input id="searchInput" type="text" placeholder="Search IMDb"
+                        class="w-full border rounded-xl text-[#797979] py-3 pl-10 pr-4 focus:outline-none bg-[#1A1A1A]" />
+                    <i id="searchIcon"
+                        class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"></i>
+
+                    <div
+                        class="absolute px-4 left-0 w-full mt-1 bg-[#2A2A2A] text-white rounded-xl shadow-lg hidden group-focus-within:block">
+                        <ul id="search" class="divide-gray-700 max-h-96 overflow-y-auto overflow-x-hidden">
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ml-6 text-white cursor-pointer group relative">
+                    <div class="flex items-center">
+                        <span class="mr-2 font-extrabold text-xl">Genres</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-32 bg-[#1A1A1A] text-white flex flex-col rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+                        <span class="px-4 flex justify-between py-1 hover:bg-gray-700 cursor-pointer">Action
+                            <div class="w-1 bg-white">|</div>
+                        </span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Adventure</span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Animation</span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Biography</span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Comedy</span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Crime</span>
+                        <span class="px-4 py-1 hover:bg-gray-700 cursor-pointer">Drama</span>
+                    </div>
+                </div>
+            </div>
+            <div id="infoTitle" class="flex flex-col mx-12 gap-4 mt-30 text-white ">
+            </div>
+
+            <script src="script.js"></script>
+</body>
+
+</html>
